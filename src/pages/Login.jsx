@@ -37,7 +37,7 @@ const defaultTheme = createTheme();
 
 export default function Login() {  
     const navigate = useNavigate()
-    const navigater = () => navigate('/menu')
+    
     
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,7 +45,9 @@ export default function Login() {
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+      
     });
+    navigate('/')
   };
 
   return (
@@ -66,7 +68,7 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -98,7 +100,7 @@ export default function Login() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={navigater}
+              // onClick={navigater}
     
             >
               Sign In
